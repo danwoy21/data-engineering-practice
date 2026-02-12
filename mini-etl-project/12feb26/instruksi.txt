@@ -1,0 +1,38 @@
+'''
+ETL (Extract, Transform, Load), data cleaning, dan otomatisasi
+
+Skenario: "The Messy Log File"
+Kamu bekerja sebagai Data Engineer di sebuah startup e-commerce. 
+Tim backend baru saja mengirimkan dump data transaksi mentah dari sistem lama (legacy).
+Data ini sangat kotor: 
+- format tanggal tidak konsisten, 
+- ada spasi     berlebih, 
+- tipe data salah (angka dianggap string),
+- dan ada data yang hilang.
+
+Tugasmu: Buatlah script Python murni (tanpa Pandas dulu, agar konsep dasarnya kuat) untuk 
+membersihkan data ini, melakukan validasi, dan menghasilkan ringkasan laporan.
+
+
+
+Tantangan (Instruksi)
+Gunakan semua topik dalam gambar referensimu untuk menyelesaikan langkah-langkah berikut:
+
+1. Functions & Methods: 
+Buat fungsi bernama clean_text(text) yang menerima string, menghapus spasi di awal/akhir (trim), dan mengubahnya menjadi Title Case (Huruf Depan Besar). Terapkan ini pada kolom product.
+
+2. Date Methods: 
+Standarisasi format tanggal. Jika formatnya DD/MM/YYYY, ubah menjadi YYYY-MM-DD (Format ISO standar database).
+
+3.Control Flow (If-Else):
+- Cek validitas data. Jika price adalah None atau kosong, skip baris tersebut (anggap data cacat).
+- Jika qty (quantity) bertipe string, ubah (cast) menjadi integer.
+
+4. Control Flow (Loops) & Data Structures:
+- Looping melalui list raw_data.
+- Hitung total_amount untuk setiap transaksi valid (rumus: price * qty).
+- Simpan data yang sudah bersih ke dalam list baru bernama clean_data.
+
+5. Dictionary Processing (Aggregation):
+Di akhir proses, hitung total pendapatan (total_revenue) dari seluruh data bersih.
+
